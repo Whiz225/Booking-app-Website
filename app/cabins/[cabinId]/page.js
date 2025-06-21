@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 
 import Reservation from "@/app/_components/Reservation";
@@ -16,12 +18,11 @@ export async function generateMetaData({ params }) {
 export async function generateStaticParams() {
   const cabins = await getCabins();
 
-  const ids = cabins.map((cabin) => {
-    cabinId: `${cabin.id}`;
-  });
+  const ids = cabins.map((cabin) => ({
+    cabinId: `${cabin.id}`,
+  }));
   return ids;
 }
-
 
 export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinId);
