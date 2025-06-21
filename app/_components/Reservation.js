@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
+"use client";
 
 import { auth } from "../_lib/auth";
 import { getBookedDatesByCabinId, getSettings } from "../_lib/data-service";
